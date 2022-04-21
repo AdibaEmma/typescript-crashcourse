@@ -38,3 +38,4 @@ let user = {
 // Type Assertions
 let cid = 1;
 let customerId = cid;
+// Functions

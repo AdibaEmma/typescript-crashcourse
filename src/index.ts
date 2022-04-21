@@ -50,3 +50,14 @@ let user: User = {
 // Type Assertions
 let cid: any = 1
 let customerId =  cid as number
+
+// Functions
+function addNum(x: number, y: number): number {
+    return x + y
+}
+
+// Void
+function log(message: number | string): void {
+    console.log(message);
+    
+}
