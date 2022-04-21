@@ -108,5 +108,14 @@ class Employee extends Person {
         this.position = position;
     }
 }
-
 const emp = new Employee(1, "Sam", "software engineer")
+
+// Generics
+function getArray<T>(items: T[]): T[] {
+    return Array().concat(items)
+}
+
+let numArray = getArray<number>([1,2,3,4,5])
+let stringArray = getArray<string>(['emma','brad','peter'])
+numArray.push('sam') //throws and error
+stringArray.push(1) //throws and error
