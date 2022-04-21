@@ -39,3 +39,33 @@ let user = {
 let cid = 1;
 let customerId = cid;
 // Functions
+function addNum(x, y) {
+    return x + y;
+}
+// Void
+function log(message) {
+    console.log(message);
+}
+let user1 = {
+    id: 1,
+    name: 'Emma'
+};
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} has been registered`;
+    }
+}
+const emma = new Person(1, "Emma");
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(1, "Sam", "software engineer");

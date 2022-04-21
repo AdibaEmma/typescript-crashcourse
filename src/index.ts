@@ -5,8 +5,8 @@ let isPublished: boolean = true
 
 let x: any = "Hello"
 
-let ids: number[] = [1,2,3,]
-let arr:any[] = [1, "Hello", true]
+let ids: number[] = [1, 2, 3,]
+let arr: any[] = [1, "Hello", true]
 
 // Tuple
 let person: [number, string, boolean] = [1, "Emma", true]
@@ -49,7 +49,7 @@ let user: User = {
 
 // Type Assertions
 let cid: any = 1
-let customerId =  cid as number
+let customerId = cid as number
 
 // Functions
 function addNum(x: number, y: number): number {
@@ -59,5 +59,54 @@ function addNum(x: number, y: number): number {
 // Void
 function log(message: number | string): void {
     console.log(message);
-    
 }
+
+// Interfaces
+interface UserInterface {
+    readonly id: number,
+    name: string,
+    age?: number //optional
+}
+
+let user1: UserInterface = {
+    id: 1,
+    name: 'Emma'
+}
+
+interface MathFunc {
+    (x: number, y: number): number
+}
+
+const add: MathFunc = (x: number, y: number): number => x + y
+const sub: MathFunc = (x: number, y: number): number => x - y
+
+// Classes
+interface PersonInterface {
+    register(): string
+}
+class Person implements PersonInterface{
+    private id: number
+    private readonly name: string
+
+    constructor(id: number, name: string) {
+        this.id = id;
+        this.name = name;
+    }
+
+    register(): string {
+        return `${this.name} has been registered`;
+    }
+}
+
+const emma = new Person(1, "Emma")
+class Employee extends Person {
+    private position: string
+
+
+    constructor(id: number, name: string, position: string) {
+        super(id, name);
+        this.position = position;
+    }
+}
+
+const emp = new Employee(1, "Sam", "software engineer")
