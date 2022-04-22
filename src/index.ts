@@ -2,9 +2,7 @@
 let id: number = 5
 let company: string = "Emmanuel"
 let isPublished: boolean = true
-
 let x: any = "Hello"
-
 let ids: number[] = [1, 2, 3,]
 let arr: any[] = [1, "Hello", true]
 
@@ -85,23 +83,25 @@ interface PersonInterface {
     register(): string
 }
 class Person implements PersonInterface{
-    private id: number
-    private readonly name: string
-
-    constructor(id: number, name: string) {
-        this.id = id;
-        this.name = name;
+    constructor(private _id: number, private readonly _name: string) {
+    }
+    register(): string {
+        return `${this._name} has been registered`;
     }
 
-    register(): string {
-        return `${this.name} has been registered`;
+    get id(): number {
+        return this._id;
+    }
+
+    set id(value: number) {
+        this._id = value;
     }
 }
 
 const emma = new Person(1, "Emma")
+emma.id = 2
 class Employee extends Person {
     private position: string
-
 
     constructor(id: number, name: string, position: string) {
         super(id, name);
